@@ -64,6 +64,14 @@ public class Elevator extends ElevatorControlSystem implements ElevatorInterface
 		floorQueue.poll();
 	}
 	
+	public void openDoors() {
+		this.callOpenElevator();
+	}
+	
+	public void closeDoors() {
+		this.callCloseElevator();
+	}
+	
 	//-----------------------------------------------------------------------
 	
 	public void ascend() {

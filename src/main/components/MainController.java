@@ -2,7 +2,6 @@ package main.components;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 import main.components.interfaces.ControllerInterface;
@@ -47,7 +46,7 @@ public class MainController implements ControllerInterface {
 
 	public void check() {
 		Collections.sort(elevators);
-		for (Elevator elevator : elevators) {
+		for (final Elevator elevator : elevators) {
 			switch (elevator.status()) {
 				case FULL:
 					switch (elevator.direction()) {
@@ -56,6 +55,19 @@ public class MainController implements ControllerInterface {
 							break;
 						case IDLE:
 							elevator.removeDestination();
+							elevator.openDoors();
+							// Spawn garbage thread, bad practice but temporary.
+							new Thread(new Runnable() {
+								Elevator elevatorThread = elevator;
+								public void run() {
+									try {
+										Thread.sleep(5000);
+										elevatorThread.closeDoors();
+									} catch (InterruptedException e) {
+										e.printStackTrace();
+									}
+								}
+							}).start();
 							break;
 						case UP:
 							elevator.ascend();

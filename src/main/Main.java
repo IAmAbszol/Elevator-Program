@@ -19,7 +19,7 @@ public class Main {
 		controller.addLocation(4);
 		controller.check();
 		
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 4; i++) {
 			controller.check();
 			System.out.println("------------------------------");
 		}
