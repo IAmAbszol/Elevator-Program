@@ -1,0 +1,3 @@
+<h3>Elevator Java Practice</h3>
+<p>During an interview, I was asked the infamous elevator problem. I actually hadn't read much about the problem what so ever, so my answer was completely on the spot but was completely correct. I wanted to refresh on Java as my hiatus on OOP has been too long. I'll be doing more of these challenges, within the next day I'll be covering test cases to run the elevator on.</p>
+<p>Big thanks to joeblau's elevator sample as I was struggling between either using an abstract class or interface. I decided on an interface but the implementation of which functions was needed. Also a sweeping check function was ingenious. I did though manipulate much of the algorithm to have an efficiently working Elevator.</p>
